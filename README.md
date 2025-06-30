@@ -30,7 +30,11 @@
   ping <other_VM_IP>
   ```
 
-<!-- Screenshot: Bridged adapter settings and successful ping output -->
+  ![Win&Ubuntu](img/Screenshot%20from%202025-06-30%2006-31-03.png)
+
+---
+
+![Win&CentOS](img/Screenshot%20from%202025-06-30%2006-36-10.png)
 
 ### ✅ 2. File Server on CentOS with Samba
 
@@ -59,8 +63,7 @@
   ```
 
 - **Test**: Mapped drive in Windows Explorer to `\\192.168.43.10\SharedFiles`.
-
-<!-- Screenshot: Windows mapped network drive dialog and folder contents -->
+  ![sharedFolder](img/Screenshot%20from%202025-06-28%2008-36-22.png)
 
 ### ✅ 3. SSH Access Across Machines
 
@@ -88,8 +91,7 @@
   ```
 
 - **Test**: `ssh user@<VM_IP>` without password.
-
-<!-- Screenshot: PowerShell SSH login and key-based login success -->
+  ![ssh login](img/Screenshot%20from%202025-06-28%2009-50-07.png) ![ssh](img/Screenshot%20from%202025-06-28%2010-17-38.png)
 
 ### ✅ 4. Host a Website on Ubuntu (Apache)
 
@@ -110,8 +112,8 @@
 
   - `http://<Ubuntu_IP>/` shows styled page.
   - `http://<Ubuntu_IP>/info.php` shows PHP info.
-
-<!-- Screenshot: Styled page and PHP info page -->
+  ![phpInfo](img/Screenshot%20from%202025-06-28%2010-59-35.png)
+  <!-- Screenshot: Styled page and PHP info page -->
 
 ### ✅ 5. Host the Same Site on CentOS (NGINX & PHP-FPM)
 
@@ -129,8 +131,9 @@
 
 - Copied files via `scp` and set proper ownership.
 - **Test**: `http://<CentOS_IP>/` and `http://<CentOS_IP>/form.html`.
-
-<!-- Screenshot: NGINX served styled page and form.html response -->
+  ![apache2](img/Screenshot%20from%202025-06-28%2010-37-12.png)
+  ![nginx](img/Screenshot%20from%202025-06-28%2013-19-26.png)
+  ![form](img/Screenshot%20from%202025-06-28%2013-19-50.png)
 
 ---
 
@@ -187,8 +190,7 @@ sudo passwd -u alice    # Unlocks the account
   ```
 
 > Confirmed deletion after killing user’s active session process.
-
-<!-- Screenshot: `useradd`, `passwd`, `usermod`, locked shell output -->
+> ![adduser](img/Screenshot%20from%202025-06-29%2017-40-52.png) ![passwd](img/Screenshot%20from%202025-06-29%2018-44-57.png) ![usermod](img/Screenshot%20from%202025-06-29%2019-48-50.png)
 
 ---
 
