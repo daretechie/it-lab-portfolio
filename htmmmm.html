@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Lab Portfolio Banner</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .banner {
+        width: 1000px;
+        height: 420px;
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 30%,
+          #334155 100%
+        );
+        position: relative;
+        overflow: hidden;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .grid-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            rgba(59, 130, 246, 0.1) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: gridMove 20s linear infinite;
+      }
+
+      @keyframes gridMove {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(50px, 50px);
+        }
+      }
+
+      .floating-icons {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .icon {
+        position: absolute;
+        color: rgba(59, 130, 246, 0.6);
+        font-size: 24px;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .icon:nth-child(1) {
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+      .icon:nth-child(2) {
+        top: 15%;
+        right: 15%;
+        animation-delay: 1s;
+      }
+      .icon:nth-child(3) {
+        bottom: 20%;
+        left: 8%;
+        animation-delay: 2s;
+      }
+      .icon:nth-child(4) {
+        bottom: 25%;
+        right: 12%;
+        animation-delay: 3s;
+      }
+      .icon:nth-child(5) {
+        top: 50%;
+        left: 5%;
+        animation-delay: 4s;
+      }
+      .icon:nth-child(6) {
+        top: 45%;
+        right: 8%;
+        animation-delay: 5s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+          opacity: 0.8;
+        }
+      }
+
+      .content {
+        text-align: center;
+        z-index: 10;
+        color: white;
+        max-width: 800px;
+        padding: 40px;
+      }
+
+      .badge {
+        background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        display: inline-block;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .title {
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 16px;
+        background: linear-gradient(45deg, #ffffff, #e2e8f0);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.1;
+      }
+
+      .subtitle {
+        font-size: 20px;
+        color: #94a3b8;
+        margin-bottom: 24px;
+        font-weight: 400;
+      }
+
+      .tech-stack {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .tech-item {
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        color: #bfdbfe;
+        padding: 8px 16px;
+        border-radius: 16px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .tech-item:hover {
+        background: rgba(59, 130, 246, 0.2);
+        border-color: rgba(59, 130, 246, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.1) 0%,
+          transparent 70%
+        );
+        transform: translate(-50%, -50%);
+        animation: glow 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        0% {
+          opacity: 0.5;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        100% {
+          opacity: 0.8;
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+      }
+
+      .terminal-window {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 200px;
+        height: 120px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 8px;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        padding: 12px;
+        font-family: "Courier New", monospace;
+        font-size: 10px;
+        color: #00ff00;
+        overflow: hidden;
+      }
+
+      .terminal-line {
+        opacity: 0;
+        animation: typewriter 0.5s ease-in forwards;
+      }
+
+      .terminal-line:nth-child(1) {
+        animation-delay: 1s;
+      }
+      .terminal-line:nth-child(2) {
+        animation-delay: 2s;
+      }
+      .terminal-line:nth-child(3) {
+        animation-delay: 3s;
+      }
+      .terminal-line:nth-child(4) {
+        animation-delay: 4s;
+      }
+
+      @keyframes typewriter {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .server-rack {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        width: 60px;
+        height: 80px;
+        background: rgba(59, 130, 246, 0.1);
+        border: 2px solid rgba(59, 130, 246, 0.3);
+        border-radius: 4px;
+      }
+
+      .server-light {
+        width: 8px;
+        height: 8px;
+        background: #10b981;
+        border-radius: 50%;
+        margin: 8px auto 4px;
+        animation: blink 2s ease-in-out infinite;
+      }
+
+      .server-light:nth-child(2) {
+        animation-delay: 0.5s;
+        background: #f59e0b;
+      }
+      .server-light:nth-child(3) {
+        animation-delay: 1s;
+        background: #ef4444;
+      }
+
+      @keyframes blink {
+        0%,
+        50% {
+          opacity: 1;
+        }
+        51%,
+        100% {
+          opacity: 0.3;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <div class="glow"></div>
+      <div class="grid-pattern"></div>
+
+      <div class="floating-icons">
+        <div class="icon">🖥️</div>
+        <div class="icon">🐧</div>
+        <div class="icon">🔗</div>
+        <div class="icon">🛡️</div>
+        <div class="icon">⚙️</div>
+        <div class="icon">📁</div>
+      </div>
+
+      <div class="terminal-window">
+        <div class="terminal-line">$ ssh user@ubuntu</div>
+        <div class="terminal-line">$ sudo systemctl start apache2</div>
+        <div class="terminal-line">$ ping centos-vm</div>
+        <div class="terminal-line">$ sudo useradd alice</div>
+      </div>
+
+      <div class="server-rack">
+        <div class="server-light"></div>
+        <div class="server-light"></div>
+        <div class="server-light"></div>
+      </div>
+
+      <div class="content">
+        <div class="badge">Beginner IT Lab Portfolio</div>
+        <h1 class="title">Linux • Web Hosting • SSH<br />User Management</h1>
+        <p class="subtitle">
+          VirtualBox Home Lab Setup & System Administration
+        </p>
+        <div class="tech-stack">
+          <span class="tech-item">Ubuntu</span>
+          <span class="tech-item">CentOS</span>
+          <span class="tech-item">Apache</span>
+          <span class="tech-item">NGINX</span>
+          <span class="tech-item">Samba</span>
+          <span class="tech-item">SSH</span>
+          <span class="tech-item">VirtualBox</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
