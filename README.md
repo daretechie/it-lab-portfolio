@@ -204,4 +204,4 @@ sudo passwd -u alice    # Unlocks the account
 
 ---
 
-🔗 **Connect with me:** [LinkedIn](#) | [GitHub](#)
+🔗 **Connect with me:** [LinkedIn](https://www.linkedin.com/in/daretechie/)
