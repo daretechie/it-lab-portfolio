@@ -1,0 +1,12 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST["name"]);
+    $message = htmlspecialchars($_POST["message"]);
+
+    echo "<h2>Thank You!</h2>";
+    echo "<p>Name: $name</p>";
+    echo "<p>Message: $message</p>";
+} else {
+    echo "Invalid request.";
+}
+?>
